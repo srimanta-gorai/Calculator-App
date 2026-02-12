@@ -6,7 +6,7 @@ data class CalculatorState(
     val num1Error: String = "",
     val num2Error: String = "",
     val result: String = "",
-//    val operator: List<String> = listOf(),
-    val operator : String = "",
+    val operator: List<String> = emptyList(),
+//    val operator : String = "",
     val selectOperator : String = ""
 )

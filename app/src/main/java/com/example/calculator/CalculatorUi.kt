@@ -57,13 +57,13 @@ fun CalculatorUi( viewModel: CalculatorViewModel ) {
         Spacer(modifier = Modifier.height(20.dp))
 
         Row {
-            listOf("+", "-", "*", "/").forEach { op ->
+            state.operator.forEach { op ->
                 Text(
                     text = op,
                     fontSize = 25.sp,
                     modifier = Modifier.padding(10.dp)
                         .clickable { viewModel.selectOperator(op) },
-                    fontWeight = if (state.operator==op) FontWeight.Bold else FontWeight.Normal
+                    fontWeight = if (state.selectOperator==op) FontWeight.Bold else FontWeight.Normal
                 )
             }
         }

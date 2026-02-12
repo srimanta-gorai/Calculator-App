@@ -20,23 +20,23 @@ class CalculatorViewModel: ViewModel(){
     }
 
     fun selectOperator(op: String) {
-        _state.update { it.copy(operator = op) }
+        _state.update { it.copy(selectOperator = op) }
     }
 
-//    init {
-//        _state.update {
-//            it.copy(
-////                operator = listOf("+","-","*","/")
+    init {
+        _state.update {
+            it.copy(
+                operator = listOf("+","-","*","/")
 //                operator = emptyList()
-//            )
-//        }
-//    }
+            )
+        }
+    }
 
     fun calculate() {
 
         val n1 = _state.value.num1.toFloatOrNull() ?: 0f
         val n2 = _state.value.num2.toFloatOrNull() ?: 0f
-        val op = _state.value.operator
+        val op = _state.value.selectOperator
 
         val result = when (op) {
             "+" -> n1 + n2
